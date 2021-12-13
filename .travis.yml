@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+-16.13.1
+dist: xenial
+sudo: required
+branches :
+    only: 
+      - master
+before_script:
+- npm install -g @angular/cli
+script:
+- npm install
+-ng test --watch=false --browsers=Chrome
+-npm run build
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  project:company-inc
+  token: 
+    secure: "pjbyHNymMf8xPzNyEJet"
+
+
