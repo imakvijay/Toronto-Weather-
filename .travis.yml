@@ -1,22 +1,21 @@
 language: node_js
 node_js:
--16.13.1
+  -16.13.1
 dist: xenial
 sudo: required
 branches :
     only: 
-      - master
+       - master
 before_script:
-- npm install -g @angular/cli
+ - npm install -g @angular/cli
 script:
--npm install
--ng test --watch=false --browsers=Chromeheadless
--npm run build
+ -npm install
+ -ng test --watch=false --browsers=Chromeheadless
+ -npm run build
 deploy:
-  skip_cleanup: True
-  provider: firebase
-  project: toronto-weather-e4751
-  token: 
-    secure: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDE282rJ1VVtayb"
+ skip_cleanup: True 
+ provider: firebase 
+ project: toronto-weather-e4751 
+ token: 
+  secure: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDE282rJ1VVtayb"
 
-#hey
