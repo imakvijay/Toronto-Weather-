@@ -16,6 +16,6 @@ deploy:
  skip_cleanup: True 
  provider: firebase 
  project: toronto-weather-e4751 
- token: 
+token: 
   secure: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDE282rJ1VVtayb"
 
