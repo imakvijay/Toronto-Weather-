@@ -11,9 +11,9 @@ before_script:
  - npm install -g firebase-tools
  - npm install -g @angular/cli
 script:
- -npm install
- -ng test --watch=false --browsers=ChromeHeadless
- -npm run build
+ - npm install
+ - ng test --watch=false --browsers=ChromeHeadless
+ - npm run build
 deploy:
  provider: firebase 
  project: toronto-weather-e4751 
