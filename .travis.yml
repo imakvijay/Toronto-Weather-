@@ -9,13 +9,13 @@ branches :
 before_script:
 - npm install -g @angular/cli
 script:
-- npm install
--ng test --watch=false --browsers=Chrome
+-npm install
+-ng test --watch=false --browsers=Chromeheadless
 -npm run build
 deploy:
   skip_cleanup: true
   provider: firebase
-  project:company-inc
+  project: toronto-weather-e4751
   token: 
     secure: "pjbyHNymMf8xPzNyEJet"
 
