@@ -1,46 +1,23 @@
-# language: node_js
-# node_js:
-# - "16.13.1"
-# dist: xenial
-# sudo: required
-# branches :
-#     only: 
-#     - master
-# before_script:
-# - npm install 
-# - npm install -g @angular/cli
-# script:
-# - npm install
-# - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
-# - npm run build
-# deploy:
-#  provider: firebase 
-#  project: toronto-weather-e4751 
-#  skip_cleanup: true
-#  token:
-#   secure: 0xqKhackvVIPhKM0h6KLz7++Cf4lmJAn1ogEfXDjNFnpCxmL5dN4SstZLIS63dPRAPrbc1yQo8hWp8nNHkkKVAN1WRTwdWNlNmLFtyXUtkVKvXXzI2gWovmBjDoq5wtwyV3G0UJU7kZkjdCTn8+CpbFN6IF69WApApehizFP6kxGdD2VntPqBFvS2T8cHN51bJpt0mCOLzUTlFRwGnMyT4ijPOoMI5YtCpAOv9dCBNJ8kbIFBepCsubZs8frNXQTdHAinLjBpAgLb6d3X8kPKlea9W93XAOofjgH0PhO/Eja/KTOa30MHRiUVrisdmYDNfAEHyTk3MbocWp/kVleY79kDdLotYv6c1N8iwU/hKA5V02n98FJoyAmkPiewUrqm2ZKmMwX6hSbNS7KRdxOvRWeq6yqgH7aY+0kTLihON77t58IOJ4+QAAKf3U5syAgPnZdwqoEZxez9r4aQbb8C64MF4MSx3qgPXglOCdkxOHGDKq43UWBkTkfqTE6eJCskrZPgxilWiTq9+ix1peHRnPYnvaFOdTH0i+STJHO6h1+7Fb8mn4q8hyN3YwaOBmA2v1sFhq8GSCvVmqg2zg6BS1ZOuNii4yVmo+0S7/HihMpI3MiRlITkJGJJ/mKodjUcNhkoThCliyzYoo3tfyomX74uOYdkPiW8O8C0wkqexo=
-# after_success:
-#   - npm install -g firebase-tools
-#   - firebase deploy --token "$FIREBASE_TOKEN"
-
-
-sudo: required
-addons:
-  chrome: stable
-
 language: node_js
 node_js:
-  - "8"
-
-branches:
-  only:
+ - "16.13.1"
+dist: xenial
+sudo: required
+branches :
+    only: 
     - master
-
 before_script:
-  - npm install -g @angular/cli
-
+ - npm install -g firebase-tools
+ - npm install -g @angular/cli
 script:
-  - ng build --prod --aot
-  - ng test
-  
+ - npm install
+ - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
+ - npm run build
+deploy:
+ provider: firebase 
+ token:
+  secure: 0xqKhackvVIPhKM0h6KLz7++Cf4lmJAn1ogEfXDjNFnpCxmL5dN4SstZLIS63dPRAPrbc1yQo8hWp8nNHkkKVAN1WRTwdWNlNmLFtyXUtkVKvXXzI2gWovmBjDoq5wtwyV3G0UJU7kZkjdCTn8+CpbFN6IF69WApApehizFP6kxGdD2VntPqBFvS2T8cHN51bJpt0mCOLzUTlFRwGnMyT4ijPOoMI5YtCpAOv9dCBNJ8kbIFBepCsubZs8frNXQTdHAinLjBpAgLb6d3X8kPKlea9W93XAOofjgH0PhO/Eja/KTOa30MHRiUVrisdmYDNfAEHyTk3MbocWp/kVleY79kDdLotYv6c1N8iwU/hKA5V02n98FJoyAmkPiewUrqm2ZKmMwX6hSbNS7KRdxOvRWeq6yqgH7aY+0kTLihON77t58IOJ4+QAAKf3U5syAgPnZdwqoEZxez9r4aQbb8C64MF4MSx3qgPXglOCdkxOHGDKq43UWBkTkfqTE6eJCskrZPgxilWiTq9+ix1peHRnPYnvaFOdTH0i+STJHO6h1+7Fb8mn4q8hyN3YwaOBmA2v1sFhq8GSCvVmqg2zg6BS1ZOuNii4yVmo+0S7/HihMpI3MiRlITkJGJJ/mKodjUcNhkoThCliyzYoo3tfyomX74uOYdkPiW8O8C0wkqexo=
+ project: toronto-weather-e4751 
+after_success:
+ - firebase deploy --token "$FIREBASE_TOKEN"
 
