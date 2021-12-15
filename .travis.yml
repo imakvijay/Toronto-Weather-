@@ -1,19 +1,33 @@
+# language: node_js
+# node_js:
+# - "8.11.3"
+# dist: trusty
+# sudo: required
+# branches :
+#     only: 
+#        - master
+# before_script:
+#  - npm install -g @angular/cli
+# script:
+#  - npm install
+#  - ng test 
 language: node_js
 node_js:
-  - 16.13.1
-dist: xenial
+  - "9"
+dist: trusty
+sudo: false  
 addons:
   chrome: stable
-branches :
-    only: 
-       - master
-before_script:
- - npm install -g @angular/cli
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+cache:
+  yarn: true
+directories:
+    - node_modules
+install:
+  - yarn install
 script:
- - npm install
- - ng test -watch false -browsers ChromeHeadless
- - yarn build --prod --base-href $base_href #base_href should be given in travis as an environment variable
- - npm run build
+  - yarn test
 deploy:
  provider: firebase 
  project: toronto-weather-e4751 
