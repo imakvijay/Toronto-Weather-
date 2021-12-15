@@ -12,6 +12,7 @@ before_script:
 script:
  - npm install
  - ng test -watch false -browsers ChromeHeadless
+ - yarn build --prod --base-href $base_href #base_href should be given in travis as an environment variable
  - npm run build
 deploy:
  provider: firebase 
