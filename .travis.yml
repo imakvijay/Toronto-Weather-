@@ -12,7 +12,7 @@ before_script:
  - npm install -g @angular/cli
 script:
  - npm install
- - ng test --watch=false --browsers=ChromeHeadless
+ - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
  - npm run build
 deploy:
  provider: firebase 
