@@ -1,6 +1,14 @@
-# Toronto Weather
+## Toronto Weather
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
+
+## deployed angular app
+
+https://toronto-weather-e4751.web.app/
+
+## Angular source code resides
+
+https://github.com/imakvijay/Toronto-Weather-/tree/master/src
 
 ## Development server
 
